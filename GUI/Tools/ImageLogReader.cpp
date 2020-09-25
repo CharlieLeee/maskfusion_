@@ -291,6 +291,8 @@ FrameDataPointer ImageLogReader::getFrameData() {
   if (currentFrame < 0) return NULL;
 
   bool bufferFail = false;
+  if (!frames[currentFrame]) std::cout << "!frames[currentFrame]";
+  if (frames[currentFrame]->depth.total() == 0) std::cout << "frames[currentFrame]->depth.total() == 0";
   while (!frames[currentFrame] || frames[currentFrame]->depth.total() == 0) {
     usleep(1);
     bufferFail = true;

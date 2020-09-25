@@ -196,6 +196,7 @@ void MaskRCNN::loop(){
                 //std::cout << "Pausing MASK-RCNN." << std::endl;
                 continue;
             }
+            std::cout << "calculating Masks" << std::endl;
             TICK("MaskRCNN");
             executeSequential(frame);
             TOCK("MaskRCNN");
